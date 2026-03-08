@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PadelElite — Book Your Court</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <nav id="navbar">
+      <a href="#" class="nav-logo">
+        <div class="dot"></div>
+        PADEL<span>ELITE</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#courts">Courts</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#booking" class="nav-cta">Book Now</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#courts" onclick="closeMobile()">Courts</a>
+      <a href="#services" onclick="closeMobile()">Services</a>
+      <a href="#pricing" onclick="closeMobile()">Pricing</a>
+      <a href="#gallery" onclick="closeMobile()">Gallery</a>
+      <a href="#contact" onclick="closeMobile()">Contact</a>
+      <a href="#booking" class="mob-cta" onclick="closeMobile()">Book Now →</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grid-lines"></div>
+
+      <div class="hero-content">
+        <div class="hero-tag"><span></span> World-Class Padel Experience</div>
+        <h1 class="hero-title">
+          <div>PLAY</div>
+          <div class="line-orange">HARD.</div>
+          <div class="line-stroke">WIN BIG.</div>
+        </h1>
+        <p class="hero-sub">
+          Book premium padel courts in seconds. Train with elite coaches, join
+          tournaments, and experience padel like never before.
+        </p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn-primary"
+            ><i class="fa-solid fa-calendar-check"></i> Reserve a Court</a
+          >
+          <a href="#courts" class="btn-secondary"
+            ><i class="fa-solid fa-play"></i> Explore Courts</a
+          >
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Courts</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5K+</div>
+          <div class="stat-label">Members</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Satisfaction</div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span class="scroll-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <div class="marquee-item">Book Your Court</div>
+        <div class="marquee-item">Elite Training</div>
+        <div class="marquee-item">Indoor & Outdoor</div>
+        <div class="marquee-item">Live Tournaments</div>
+        <div class="marquee-item">Pro Coaching</div>
+        <div class="marquee-item">Night Games</div>
+        <div class="marquee-item">Book Your Court</div>
+        <div class="marquee-item">Elite Training</div>
+        <div class="marquee-item">Indoor & Outdoor</div>
+        <div class="marquee-item">Live Tournaments</div>
+        <div class="marquee-item">Pro Coaching</div>
+        <div class="marquee-item">Night Games</div>
+      </div>
+    </div>
+
+    <!-- BOOKING -->
+    <section id="booking" class="booking-banner">
+      <div class="booking-inner">
+        <div class="booking-form-area">
+          <div class="booking-title">RESERVE YOUR <span>COURT</span></div>
+          <div class="booking-fields">
+            <div class="field-group">
+              <label>Location</label>
+              <select>
+                <option>Downtown Club</option>
+                <option>North Arena</option>
+                <option>Beachside Courts</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Date</label>
+              <input type="date" />
+            </div>
+            <div class="field-group">
+              <label>Time Slot</label>
+              <select>
+                <option>07:00 AM</option>
+                <option>09:00 AM</option>
+                <option>11:00 AM</option>
+                <option>01:00 PM</option>
+                <option>03:00 PM</option>
+                <option>05:00 PM</option>
+                <option>07:00 PM</option>
+                <option>09:00 PM</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Players</label>
+              <select>
+                <option>2 Players</option>
+                <option>4 Players</option>
+              </select>
+            </div>
+          </div>
+          <button class="book-btn">
+            <i class="fa-solid fa-bolt"></i> Check Availability
+          </button>
+        </div>
+        <div class="booking-deco">
+          <div class="booking-deco-text">PLAY</div>
+          <div class="courts-badge">
+            <span>12</span>
+            <span>Courts</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="why">
+      <div class="why-grid">
+        <div class="why-visual reveal">
+          <img
+            src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=900&auto=format&fit=crop"
+            alt="Padel Court"
+            class="why-img-main"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1617897903246-719242758050?w=600&auto=format&fit=crop"
+            alt="Players"
+            class="why-img-secondary"
+          />
+          <div class="why-badge">
+            <span>10+</span>
+            <span>Years of Excellence</span>
+          </div>
+        </div>
+        <div class="why-text reveal">
+          <div>
+            <div class="section-label">Why Choose Us</div>
+            <h2 class="section-h2">
+              THE <span>ULTIMATE</span><br />PADEL CLUB
+            </h2>
+          </div>
+          <p>
+            We're not just a sports venue — we're a community of passionate
+            padel players. From casual games to competitive tournaments, we have
+            everything you need to elevate your game to the next level.
+          </p>
+          <div class="why-features">
+            <div class="why-feat">
+              <div class="feat-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <h4>Pro-Grade Courts</h4>
+              <p>FIFA-certified surfaces with professional lighting</p>
+            </div>
+            <div class="why-feat">
+              <div class="feat-icon"><i class="fa-solid fa-clock"></i></div>
+              <h4>Open 7 Days</h4>
+              <p>6 AM to midnight, every single day of the year</p>
+            </div>
+            <div class="why-feat">
+              <div class="feat-icon"><i class="fa-solid fa-dumbbell"></i></div>
+              <h4>Elite Coaches</h4>
+              <p>Certified trainers with international experience</p>
+            </div>
+            <div class="why-feat">
+              <div class="feat-icon">
+                <i class="fa-solid fa-mobile-screen"></i>
+              </div>
+              <h4>Easy Booking</h4>
+              <p>Reserve your court in under 60 seconds online</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURTS -->
+    <section class="courts" id="courts">
+      <div class="courts-header reveal">
+        <div>
+          <div class="section-label">Our Facilities</div>
+          <h2 class="section-h2">PREMIUM <span>COURTS</span></h2>
+        </div>
+        <a href="#booking" class="btn-primary"
+          ><i class="fa-solid fa-calendar"></i> Book Now</a
+        >
+      </div>
+      <div class="courts-grid">
+        <div class="court-card featured reveal">
+          <img
+            src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=900&auto=format&fit=crop"
+            alt="Crystal Court"
+            class="court-img"
+          />
+          <div class="court-overlay"></div>
+          <div class="court-content">
+            <span class="court-tag">Most Popular</span>
+            <div class="court-name">CRYSTAL COURT</div>
+            <div class="court-desc">
+              Full glass panoramic walls with premium LED lighting. The flagship
+              experience.
+            </div>
+            <div class="court-meta">
+              <div class="court-price">$35<span>/hr</span></div>
+              <a href="#booking" class="court-book-btn">Reserve →</a>
+            </div>
+          </div>
+        </div>
+        <div class="court-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1599474924187-334a4ae5bd3b?w=800&auto=format&fit=crop"
+            alt="Indoor Court"
+            class="court-img"
+          />
+          <div class="court-overlay"></div>
+          <div class="court-content">
+            <span class="court-tag green-tag">Indoor</span>
+            <div class="court-name">ARENA COURT</div>
+            <div class="court-desc">
+              Climate-controlled indoor arena for year-round play.
+            </div>
+            <div class="court-meta">
+              <div class="court-price">$28<span>/hr</span></div>
+              <a href="#booking" class="court-book-btn">Reserve →</a>
+            </div>
+          </div>
+        </div>
+        <div class="court-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=800&auto=format&fit=crop"
+            alt="Night Court"
+            class="court-img"
+          />
+          <div class="court-overlay"></div>
+          <div class="court-content">
+            <span class="court-tag">Night Special</span>
+            <div class="court-name">NIGHT COURT</div>
+            <div class="court-desc">
+              LED-lit outdoor court for the ultimate night padel session.
+            </div>
+            <div class="court-meta">
+              <div class="court-price">$22<span>/hr</span></div>
+              <a href="#booking" class="court-book-btn">Reserve →</a>
+            </div>
+          </div>
+        </div>
+        <div class="court-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?w=800&auto=format&fit=crop"
+            alt="VIP Court"
+            class="court-img"
+          />
+          <div class="court-overlay"></div>
+          <div class="court-content">
+            <span class="court-tag">VIP</span>
+            <div class="court-name">VIP SUITE COURT</div>
+            <div class="court-desc">
+              Private court with lounge area and dedicated concierge service.
+            </div>
+            <div class="court-meta">
+              <div class="court-price">$55<span>/hr</span></div>
+              <a href="#booking" class="court-book-btn">Reserve →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="services-inner">
+        <div class="reveal" style="text-align: center; margin-bottom: 10px">
+          <div class="section-label" style="justify-content: center">
+            What We Offer
+          </div>
+          <h2 class="section-h2">OUR <span>SERVICES</span></h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <h3>Court Booking</h3>
+            <p>
+              Instant online reservations with real-time availability. Book any
+              time, any day, from any device.
+            </p>
+            <a href="#booking" class="service-link"
+              >Book Now <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <h3>Professional Coaching</h3>
+            <p>
+              One-on-one sessions and group training with certified coaches.
+              From beginner to tournament-level.
+            </p>
+            <a href="#pricing" class="service-link"
+              >View Plans <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-trophy"></i></div>
+            <h3>Tournaments</h3>
+            <p>
+              Weekly internal competitions and access to regional padel leagues.
+              Compete, rank, and dominate.
+            </p>
+            <a href="#contact" class="service-link"
+              >Learn More <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-users"></i></div>
+            <h3>Social Leagues</h3>
+            <p>
+              Join our recreational leagues and meet new playing partners. Fun,
+              social, competitive.
+            </p>
+            <a href="#pricing" class="service-link"
+              >Join Now <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-icon">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+            <h3>Pro Shop</h3>
+            <p>
+              Premium padel equipment, rackets, and apparel from the world's top
+              brands. Gear up right.
+            </p>
+            <a href="#contact" class="service-link"
+              >Shop Now <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-spa"></i></div>
+            <h3>Club Amenities</h3>
+            <p>
+              Changing rooms, showers, lounge, café bar, and dedicated lockers.
+              Complete club experience.
+            </p>
+            <a href="#gallery" class="service-link"
+              >View Gallery <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+      <div class="pricing-inner">
+        <div class="pricing-header reveal">
+          <div class="section-label" style="justify-content: center">
+            Membership Plans
+          </div>
+          <h2 class="section-h2">CHOOSE YOUR <span>PLAN</span></h2>
+          <p style="color: var(--gray); margin-top: 16px; font-size: 15px">
+            Flexible memberships to suit every player level
+          </p>
+          <div class="pricing-toggle">
+            <button
+              class="toggle-btn active"
+              id="monthlyBtn"
+              onclick="togglePricing('monthly')"
+            >
+              Monthly
+            </button>
+            <button
+              class="toggle-btn"
+              id="annualBtn"
+              onclick="togglePricing('annual')"
+            >
+              Annual
+              <span style="color: var(--orange); font-size: 10px">
+                Save 20%</span
+              >
+            </button>
+          </div>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card reveal">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price" id="price-starter">
+              <sup>$</sup>29<sub>/mo</sub>
+            </div>
+            <div class="plan-desc">
+              Perfect for casual players who want to play a few times per month.
+            </div>
+            <ul class="plan-features">
+              <li><i class="fa-solid fa-check"></i> 4 Court Hours/Month</li>
+              <li><i class="fa-solid fa-check"></i> Member Pricing</li>
+              <li><i class="fa-solid fa-check"></i> Online Booking</li>
+              <li><i class="fa-solid fa-check"></i> Locker Access</li>
+              <li class="off">
+                <i class="fa-solid fa-xmark"></i> Coaching Sessions
+              </li>
+              <li class="off">
+                <i class="fa-solid fa-xmark"></i> Tournament Entry
+              </li>
+            </ul>
+            <button class="plan-btn outline">Get Started</button>
+          </div>
+          <div class="pricing-card popular reveal">
+            <span class="popular-badge">Most Popular</span>
+            <div class="plan-name">Pro</div>
+            <div class="plan-price" id="price-pro">
+              <sup>$</sup>69<sub>/mo</sub>
+            </div>
+            <div class="plan-desc">
+              For the dedicated player who wants unlimited access and coaching.
+            </div>
+            <ul class="plan-features">
+              <li><i class="fa-solid fa-check"></i> Unlimited Court Hours</li>
+              <li><i class="fa-solid fa-check"></i> 2 Coaching Sessions/Mo</li>
+              <li><i class="fa-solid fa-check"></i> Priority Booking</li>
+              <li><i class="fa-solid fa-check"></i> Tournament Entry</li>
+              <li><i class="fa-solid fa-check"></i> Pro Shop Discount 10%</li>
+              <li class="off">
+                <i class="fa-solid fa-xmark"></i> VIP Court Access
+              </li>
+            </ul>
+            <button class="plan-btn solid">Get Started</button>
+          </div>
+          <div class="pricing-card reveal">
+            <div class="plan-name">Elite</div>
+            <div class="plan-price" id="price-elite">
+              <sup>$</sup>129<sub>/mo</sub>
+            </div>
+            <div class="plan-desc">
+              The ultimate membership for serious competitive players and teams.
+            </div>
+            <ul class="plan-features">
+              <li><i class="fa-solid fa-check"></i> Unlimited Court Hours</li>
+              <li><i class="fa-solid fa-check"></i> 6 Coaching Sessions/Mo</li>
+              <li><i class="fa-solid fa-check"></i> VIP Court Access</li>
+              <li><i class="fa-solid fa-check"></i> All Tournaments Free</li>
+              <li><i class="fa-solid fa-check"></i> Pro Shop Discount 20%</li>
+              <li><i class="fa-solid fa-check"></i> Guest Passes x4/Mo</li>
+            </ul>
+            <button class="plan-btn outline">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <div class="testimonials-inner">
+        <div class="testimonials-header reveal">
+          <div class="section-label" style="justify-content: center">
+            Player Reviews
+          </div>
+          <h2 class="section-h2">WHAT PLAYERS <span>SAY</span></h2>
+        </div>
+        <div class="testi-grid">
+          <div class="testi-card reveal">
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-quote">"</div>
+            <p class="testi-text">
+              The courts are absolutely world-class. I've played at clubs across
+              Europe and PadelElite easily matches the best. The booking system
+              is seamless.
+            </p>
+            <div class="testi-author">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Alex M"
+                class="testi-avatar"
+              />
+              <div class="testi-info">
+                <h4>Alex Martinez</h4>
+                <span>Pro Member · 2 Years</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card reveal">
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-quote">"</div>
+            <p class="testi-text">
+              Coach Ricardo completely transformed my backhand in just 4
+              sessions. The level of expertise here is unmatched. Worth every
+              penny of the Elite plan.
+            </p>
+            <div class="testi-author">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Sofia L"
+                class="testi-avatar"
+              />
+              <div class="testi-info">
+                <h4>Sofia Laurent</h4>
+                <span>Elite Member · 1 Year</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card reveal">
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-quote">"</div>
+            <p class="testi-text">
+              We bring our corporate team here monthly. The VIP courts and
+              lounge are exceptional for entertaining clients. Truly a premium
+              experience from start to finish.
+            </p>
+            <div class="testi-author">
+              <img
+                src="https://randomuser.me/api/portraits/men/55.jpg"
+                alt="James T"
+                class="testi-avatar"
+              />
+              <div class="testi-info">
+                <h4>James Thompson</h4>
+                <span>Elite Member · 3 Years</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+      <div class="gallery-inner">
+        <div class="gallery-header reveal">
+          <div>
+            <div class="section-label">Our Facilities</div>
+            <h2 class="section-h2">TAKE A <span>LOOK</span></h2>
+          </div>
+          <a href="#contact" class="btn-secondary"
+            ><i class="fa-solid fa-location-dot"></i> Visit Us</a
+          >
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1000&auto=format&fit=crop"
+              alt="Padel Court"
+            />
+            <div class="gallery-item-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="gallery-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1617897903246-719242758050?w=600&auto=format&fit=crop"
+              alt="Players"
+            />
+            <div class="gallery-item-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="gallery-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1599474924187-334a4ae5bd3b?w=600&auto=format&fit=crop"
+              alt="Indoor"
+            />
+            <div class="gallery-item-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="gallery-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&auto=format&fit=crop"
+              alt="Night"
+            />
+            <div class="gallery-item-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="gallery-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?w=600&auto=format&fit=crop"
+              alt="Training"
+            />
+            <div class="gallery-item-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner" id="contact">
+      <div class="section-label">Get On Court</div>
+      <h2 class="section-h2">READY TO <span>PLAY?</span></h2>
+      <p>
+        Join thousands of players who've already discovered the PadelElite
+        difference. Your first booking is waiting.
+      </p>
+      <div class="cta-actions">
+        <a href="#booking" class="btn-primary"
+          ><i class="fa-solid fa-calendar-check"></i> Book a Court Now</a
+        >
+        <a href="tel:+15551234567" class="btn-secondary"
+          ><i class="fa-solid fa-phone"></i> Call Us</a
+        >
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">PADEL<span>ELITE</span></a>
+          <p>
+            The home of premium padel. World-class courts, elite coaching, and a
+            community that lives for the game.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="footer-soc-btn"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="footer-soc-btn"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="footer-soc-btn"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="footer-soc-btn"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#courts">Courts</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Membership</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#booking">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Court Rental</a></li>
+            <li><a href="#">Coaching</a></li>
+            <li><a href="#">Tournaments</a></li>
+            <li><a href="#">Social Leagues</a></li>
+            <li><a href="#">Pro Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>123 Padel Boulevard<br />City Center, CA 90210</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (555) 123-4567</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>hello@padelelite.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Mon–Sun: 6:00 AM – 12:00 AM</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 PadelElite. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+      </div>
+    </footer>
+
+    <script>
+      // NAV SCROLL
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        nav.classList.toggle("scrolled", window.scrollY > 40);
+      });
+
+      // HAMBURGER
+      const ham = document.getElementById("hamburger");
+      const mob = document.getElementById("mobileMenu");
+
+      ham.addEventListener("click", () => {
+        ham.classList.toggle("open");
+        mob.classList.toggle("open");
+      });
+
+      function closeMobile() {
+        ham.classList.remove("open");
+        mob.classList.remove("open");
+      }
+
+      document.addEventListener("click", (e) => {
+        if (!ham.contains(e.target) && !mob.contains(e.target)) closeMobile();
+      });
+
+      // SCROLL REVEAL
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      document.querySelectorAll(".reveal").forEach((el, i) => {
+        el.style.transitionDelay = `${(i % 4) * 0.08}s`;
+        observer.observe(el);
+      });
+
+      // PRICING TOGGLE
+      const prices = {
+        monthly: { starter: 29, pro: 69, elite: 129 },
+        annual: { starter: 23, pro: 55, elite: 103 },
+      };
+
+      function togglePricing(type) {
+        document
+          .getElementById("monthlyBtn")
+          .classList.toggle("active", type === "monthly");
+        document
+          .getElementById("annualBtn")
+          .classList.toggle("active", type === "annual");
+        const p = prices[type];
+        document.getElementById("price-starter").innerHTML =
+          `<sup>$</sup>${p.starter}<sub>/mo</sub>`;
+        document.getElementById("price-pro").innerHTML =
+          `<sup>$</sup>${p.pro}<sub>/mo</sub>`;
+        document.getElementById("price-elite").innerHTML =
+          `<sup>$</sup>${p.elite}<sub>/mo</sub>`;
+      }
+    </script>
+  </body>
+</html>
