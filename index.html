@@ -118,40 +118,41 @@
           <div class="booking-fields">
             <div class="field-group">
               <label>Location</label>
-              <select>
-                <option>Downtown Club</option>
-                <option>North Arena</option>
-                <option>Beachside Courts</option>
+              <select id="court">
+                <option id="downtown club">Downtown Club</option>
+                <option id="north arena">North Arena</option>
+                <option id="beachside courts">Beachside Courts</option>
               </select>
             </div>
             <div class="field-group">
               <label>Date</label>
-              <input type="date" />
+              <input type="date" id="date" />
             </div>
             <div class="field-group">
               <label>Time Slot</label>
-              <select>
-                <option>07:00 AM</option>
-                <option>09:00 AM</option>
-                <option>11:00 AM</option>
-                <option>01:00 PM</option>
-                <option>03:00 PM</option>
-                <option>05:00 PM</option>
-                <option>07:00 PM</option>
-                <option>09:00 PM</option>
+              <select id="time">
+                <option id="time1">07:00 AM</option>
+                <option id="time2">09:00 AM</option>
+                <option id="time3">11:00 AM</option>
+                <option id="time4">01:00 PM</option>
+                <option id="time5">03:00 PM</option>
+                <option id="time6">05:00 PM</option>
+                <option id="time7">07:00 PM</option>
+                <option id="time8">09:00 PM</option>
               </select>
             </div>
             <div class="field-group">
               <label>Players</label>
-              <select>
-                <option>2 Players</option>
-                <option>4 Players</option>
+              <select id="player">
+                <option id="player2">2 Players</option>
+                <option id="player4">4 Players</option>
               </select>
             </div>
           </div>
-          <button class="book-btn">
+          <button class="book-btn" type="submit">
             <i class="fa-solid fa-bolt"></i> Check Availability
           </button>
+          <p id="message"></p>
         </div>
         <div class="booking-deco">
           <div class="booking-deco-text">PLAY</div>
@@ -258,7 +259,7 @@
         </div>
         <div class="court-card reveal">
           <img
-            src="https://www.greenbrier.com/content/uploads/2023/10/Indoor-Tennis-1.jpg"
+            src="https://images.unsplash.com/photo-1599474924187-334a4ae5bd3b?w=800&auto=format&fit=crop"
             alt="Indoor Court"
             class="court-img"
           />
@@ -788,16 +789,50 @@
           `<sup>$</sup>${p.elite}<sub>/mo</sub>`;
       }
     </script>
-    // COURT BOOKING
+    <!-- BOOKING A COURT -->
     <script>
-      fetch("https://padelelitebackend.wordpress.com/wp-json/wp/v2/posts")
-.then(res => res.json())
-.then(data => {
-   console.log(data);
-})
-    </script>
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("court").value;
+          const email = document.getElementById("date").value;
+          const court = document.getElementById("time").value;
+          const date = document.getElementById("player").value;
+
+          fetch(
+            "https://public-api.wordpress.com/rest/v1.1/sites/padelelitebackend.wordpress.com/posts/new",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                title: "Court Booking",
+                content: `
+        court: ${court}
+        Date: ${Date}
+        Time: ${time}
+        Player ${player}
+      `,
+              }),
+            },
+          )
+            .then((res) => {
+              if (res.ok) {
+                document.getElementById("message").innerText =
+                  "Court booked successfully!";
+              } else {
+                document.getElementById("message").innerText =
+                  "Booking failed!";
+              }
+            })
+            .catch((err) => {
+              document.getElementById("message").innerText =
+                "Error booking court.";
+            });
+        });
     </script>
   </body>
 </html>
-
-
