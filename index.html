@@ -743,6 +743,7 @@ const { data, error } = await db
 .eq("location", location)
 .eq("date", date)
 .eq("time", time)
+  .eq("players", players)
 
 if(error){
 alert("Database error")
@@ -835,6 +836,7 @@ alert("✅ Court booked successfully")
 
   </body>
 </html>
+
 
 
 
