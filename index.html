@@ -111,6 +111,7 @@
     </div>
 
     <!-- BOOKING -->
+    <form action="booking" id="bookingForm">
     <section id="booking" class="booking-banner">
       <div class="booking-inner">
         <div class="booking-form-area">
@@ -163,7 +164,7 @@
         </div>
       </div>
     </section>
-
+    </form>
     <!-- WHY -->
     <section class="why">
       <div class="why-grid">
@@ -792,7 +793,7 @@
     <!-- BOOKING A COURT -->
     <script>
       document
-        .getElementById("booking")
+        .getElementById("bookingForm")
         .addEventListener("submit", function (e) {
           e.preventDefault();
 
@@ -836,5 +837,6 @@
     </script>
   </body>
 </html>
+
 
 
