@@ -720,7 +720,61 @@
         <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
       </div>
     </footer>
+    <script>
+      // Booking court
+      const supabaseUrl = "https://hjitxoibtplgbtdksuhz.supabase.co";
+      const supabaseKey = "sb_publishable_Iq6bJlQGW3S41IOfNDinZw_6oAG5T75";
 
+      const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const location = document.getElementById("court").value;
+          const date = document.getElementById("date").value;
+          const time = document.getElementById("time").value;
+          const players = document.getElementById("player").value;
+
+          if (!date) {
+            alert("Please select a date");
+            return;
+          }
+
+          // check availability
+          const { data, error } = await supabase
+            .from("bookings")
+            .select("*")
+            .eq("location", location)
+            .eq("date", date)
+            .eq("time", time);
+
+          if (error) {
+            alert("Database error");
+            return;
+          }
+
+          if (data.length > 0) {
+            alert("❌ Court not available for this slot");
+
+            return;
+          }
+
+          // insert booking
+          const { error: insertError } = await supabase
+            .from("bookings")
+            .insert([{ location, date, time, players }]);
+
+          if (insertError) {
+            alert("❌ Booking failed");
+          } else {
+            alert("✅ Court booked successfully!");
+
+            document.getElementById("bookingForm").reset();
+          }
+        });
+    </script>
     <script>
       // NAV SCROLL
       window.addEventListener("scroll", () => {
@@ -786,60 +840,7 @@
           `<sup>$</sup>${p.elite}<sub>/mo</sub>`;
       }
     </script>
-    <script>
-      // Booking court
-      const supabaseUrl = "https://hjitxoibtplgbtdksuhz.supabase.co";
-      const supabaseKey = "sb_publishable_Iq6bJlQGW3S41IOfNDinZw_6oAG5T75";
 
-      const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
-
-      document
-        .getElementById("bookingForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
-
-          const location = document.getElementById("court").value;
-          const date = document.getElementById("date").value;
-          const time = document.getElementById("time").value;
-          const players = document.getElementById("player").value;
-
-          if (!date) {
-            alert("Please select a date");
-            return;
-          }
-
-          // check availability
-          const { data, error } = await supabase
-            .from("bookings")
-            .select("*")
-            .eq("location", location)
-            .eq("date", date)
-            .eq("time", time);
-
-          if (error) {
-            alert("Database error");
-            return;
-          }
-
-          if (data.length > 0) {
-            alert("❌ Court not available for this slot");
-
-            return;
-          }
-
-          // insert booking
-          const { error: insertError } = await supabase
-            .from("bookings")
-            .insert([{ location, date, time, players }]);
-
-          if (insertError) {
-            alert("❌ Booking failed");
-          } else {
-            alert("✅ Court booked successfully!");
-
-            document.getElementById("bookingForm").reset();
-          }
-        });
-    </script>
   </body>
 </html>
+
