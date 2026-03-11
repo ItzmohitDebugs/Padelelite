@@ -722,58 +722,50 @@
     </footer>
     <script>
       // Booking court
-      const supabaseUrl = "https://hjitxoibtplgbtdksuhz.supabase.co";
-      const supabaseKey = "sb_publishable_Iq6bJlQGW3S41IOfNDinZw_6oAG5T75";
+      const supabaseUrl = "https://hjitxoibtplgbtdksuhz.supabase.co"
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhqaXR4b2lidHBsZ2J0ZGtzdWh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMTk4OTgsImV4cCI6MjA4ODc5NTg5OH0.Xfs5q0VcWsb_qWGx8x9os6V18l2Up-LDcY5_jQKvMRE"
 
-      const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+const db = window.supabase.createClient(supabaseUrl, supabaseKey)
 
-      document
-        .getElementById("bookingForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
+document.getElementById("bookingForm").addEventListener("submit", async function(e){
 
-          const location = document.getElementById("court").value;
-          const date = document.getElementById("date").value;
-          const time = document.getElementById("time").value;
-          const players = document.getElementById("player").value;
+e.preventDefault()
 
-          if (!date) {
-            alert("Please select a date");
-            return;
-          }
+const location = document.getElementById("court").value
+const date = document.getElementById("date").value
+const time = document.getElementById("time").value
+const players = document.getElementById("player").value
 
-          // check availability
-          const { data, error } = await supabase
-            .from("bookings")
-            .select("*")
-            .eq("location", location)
-            .eq("date", date)
-            .eq("time", time);
+// check availability
+const { data, error } = await db
+.from("bookings")
+.select("*")
+.eq("location", location)
+.eq("date", date)
+.eq("time", time)
 
-          if (error) {
-            alert("Database error");
-            return;
-          }
+if(error){
+alert("Database error")
+return
+}
 
-          if (data.length > 0) {
-            alert("❌ Court not available for this slot");
+if(data.length > 0){
+alert("❌ Court not available")
+return
+}
 
-            return;
-          }
+// insert booking
+const { error: insertError } = await db
+.from("bookings")
+.insert([{ location, date, time, players }])
 
-          // insert booking
-          const { error: insertError } = await supabase
-            .from("bookings")
-            .insert([{ location, date, time, players }]);
+if(insertError){
+alert("❌ Booking failed")
+}else{
+alert("✅ Court booked successfully")
+}
 
-          if (insertError) {
-            alert("❌ Booking failed");
-          } else {
-            alert("✅ Court booked successfully!");
-
-            document.getElementById("bookingForm").reset();
-          }
-        });
+});
     </script>
     <script>
       // NAV SCROLL
@@ -843,4 +835,5 @@
 
   </body>
 </html>
+
 
